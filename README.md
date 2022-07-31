@@ -1,4 +1,4 @@
-# Microservices_C4_Assignment_Group_11
+# Deployment of Microservices C6 Assignment Group-11
 This is GitHub repository of Microservices Assignment designed by Group 11
 
 # Project Title 
