@@ -12,9 +12,9 @@ This project aims to develop microservices for student_score details using datab
 
 This project uses Django to develop endpoints for students and their scores. It uses SQLite Database to store the data received from endpoints. The project is continuation of previous assignment which aims at deploying the application on kubernetes.
 
-## Project Screenshots
+# Project Screenshots
 
-# Deployment in Kubernetes using Minikube 
+## Deployment in Kubernetes using Minikube 
 ![minikube-dashboard-deployment](https://user-images.githubusercontent.com/94062868/182042454-2e3ff2c5-0372-4690-a962-b3bd4e4ba106.png)
 ![deployment-view](https://user-images.githubusercontent.com/94062868/182042459-24614fd7-fe33-4fe2-b87a-57e5ad73b615.png)
 ![pods-with-metrics](https://user-images.githubusercontent.com/94062868/182042478-4f39e677-dbdc-4154-956a-8a1e76bb80d8.png)
@@ -22,27 +22,28 @@ This project uses Django to develop endpoints for students and their scores. It 
 ![services-view](https://user-images.githubusercontent.com/94062868/182042686-affb4ad6-e161-447a-bdec-26d127c2bc51.jpeg)
 ![kubernetes-namespaces](https://user-images.githubusercontent.com/94062868/182042506-46b2771a-338b-4096-9c9a-dc10bc7d1426.png)
 
-# Rolling out Deployment 
+## Rolling out Deployment 
 ![rollout-update](https://user-images.githubusercontent.com/94062868/182042723-a2699fef-4aa8-47e9-b269-4f7dc940181e.png)
 ![rollout-in-progress](https://user-images.githubusercontent.com/94062868/182042733-434ec093-00bb-4dde-b546-c88a376b9da0.png)
 ![rollout-new-update](https://user-images.githubusercontent.com/94062868/182042730-1abd5e9b-2f68-4313-a709-f9196855368d.png)
 
-# Deployed on Kubernetes
+## Deployed on Kubernetes
 ![student-view](https://user-images.githubusercontent.com/94062868/182042764-f73810ca-72c1-4bb1-b879-82fb65ca3f2c.png)
 ![student-deployment-view](https://user-images.githubusercontent.com/94062868/182042791-d40ce4fb-d88c-4e81-aabd-9417a9292152.png)
 ![scores-view](https://user-images.githubusercontent.com/94062868/182042781-c9074b95-59e2-482e-ac16-072a5feda1ff.png)
 ![scores-deployment-view](https://user-images.githubusercontent.com/94062868/182042806-9f61951a-8da2-4912-98b3-c44a63814962.png)
 ![all-details-domain-deployment](https://user-images.githubusercontent.com/94062868/182042783-e14f6c3f-3adb-4f13-a981-229fa82b0aa5.png)
-![all-details-view](https://user-images.githubusercontent.com/94062868/182042818-e3e681ce-710e-49a6-9ad3-78ee4eb2c0e3.png)
+![all-details-view](https://user-images.githubusercontent.com/94062868/182043825-fef7820d-44fe-46fe-ad77-eace4be6cfc2.png)
 
-# Horizontal Pod Auto-Scaling of Deployment 
+## Horizontal Pod Auto-Scaling of Deployment 
 ![pods-with-cpu-usage](https://user-images.githubusercontent.com/94062868/182042874-afb60ae6-86af-4cc0-9d75-ed29b560c331.png)
-![Screenshot (154)](https://user-images.githubusercontent.com/94062868/182042881-a7defb4c-ccfe-484f-ab49-91d4432bed24.png)
+![Screenshot (154)](https://user-images.githubusercontent.com/94062868/182043827-8fbc03b4-6537-42d6-bc55-41945339e323.png)
 
-# Events in kubernetes cluster 
-![services-view](https://user-images.githubusercontent.com/94062868/182042913-f1d70293-c111-448e-bf79-1a82fce56fc9.png)
+## Events in kubernetes cluster 
+![services-view](https://user-images.githubusercontent.com/94062868/182043844-c03c4a33-9d44-43b0-867f-8ad92742e10f.png)
 
-# Student's Scores Details Application Output Screenshots
+
+## Student's Scores Details Application Output Screenshots
 ![student_domain_endpoints](https://user-images.githubusercontent.com/94062868/170861117-4e51ff94-e2bf-4355-8bd7-6a3711e53ffa.PNG)
 ![scores_domain_endpoints](https://user-images.githubusercontent.com/94062868/170861125-06ef4df2-e9a0-4f48-bfd9-5a3442248f17.PNG)
 ![all_details_endpoint](https://user-images.githubusercontent.com/94062868/170861129-32e45e42-fbd8-4a02-9a73-461348531d65.PNG)
@@ -84,17 +85,17 @@ c. All Details Domain is conﬁgured on port 30003 & navigate to localhost:30000
    ![all-details-domain-deployment](https://user-images.githubusercontent.com/94062868/182042783-e14f6c3f-3adb-4f13-a981-229fa82b0aa5.png) 
 
 6.  Commands for Rolling Out a deployment
-<b><i>docker build . t kiranbs13/student-ms:v1 </i></b>
-<b><i>docker push kiranbs13/student-ms:v1 </i></b>
-<b><i><b><i>kubectl set image deployments/student-ms student-microservice=kiranbs13/student-ms:v1 </i></b>
-<b><i>kubectl rollout status deployments/student-ms </i></b> 
-<b><i>kubectl rollout undo deployments/student-ms </i></b>
+<b><i>docker build . t kiranbs13/student-ms:v1 </i></b><br/><br/>
+<b><i>docker push kiranbs13/student-ms:v1 </i></b><br/>
+<b><i><b><i>kubectl set image deployments/student-ms student-microservice=kiranbs13/student-ms:v1 </i></b><br/>
+<b><i>kubectl rollout status deployments/student-ms </i></b> <br/>
+<b><i>kubectl rollout undo deployments/student-ms </i></b><br/>
 
 7.  Commands for Scaling a deployment
 	
-<b><i>kubectl autoscale deployment student-ms --cpu-percent=50 --min=4 --max=10 </i></b>
-<b><i>kubectl get hpa</i></b>
-<b><i>kubectl get hpa student-ms --watch</i></b>
+<b><i>kubectl autoscale deployment student-ms --cpu-percent=50 --min=4 --max=10 </i></b><br/>
+<b><i>kubectl get hpa</i></b><br/>
+<b><i>kubectl get hpa student-ms --watch</i></b><br/>
    
 # Reflection
 
