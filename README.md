@@ -1,4 +1,4 @@
-# Deployment of Microservices C6 Assignment Group-11
+# Deployment of Microservices Application in Kubernetes C6 Assignment Group-11
 This is GitHub repository of Microservices Assignment designed by Group 11
 
 # Project Title 
