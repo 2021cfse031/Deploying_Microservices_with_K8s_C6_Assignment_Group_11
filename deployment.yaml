@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-ms
+  labels:
+    app: student-microservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: student-microservice
+  template:
+    metadata:
+      labels:
+        app: student-microservice
+    spec:
+      containers:
+        - image: mrathi976/microservices:latest
+          name: student-microservice
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+            requests:
+              cpu: "0.5m"
+              memory: "64Mi"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scores-ms
+  labels:
+    app: scores-microservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: scores-microservice
+  template:
+    metadata:
+      labels:
+        app: scores-microservice
+    spec:
+      containers:
+        - image: mrathi976/scores-service:latest
+          name: scores-microservice
+          ports:
+            - containerPort: 7000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+            requests:
+              cpu: "0.5m"
+              memory: "64Mi"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: all-details-ms
+  labels:
+    app: all-details-microservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: all-details-microservice
+  template:
+    metadata:
+      labels:
+        app: all-details-microservice
+    spec:
+      containers:
+        - image: mrathi976/all-details-service:latest
+          name: all-details-microservice
+          ports:
+            - containerPort: 9000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+            requests:
+              cpu: "0.5m"
+              memory: "64Mi"
